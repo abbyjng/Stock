@@ -10,19 +10,74 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Overview View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="OverviewViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l20-V5-ug8">
+                                <rect key="frame" x="0.0" y="44" width="414" height="896"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vhK-Ls-Eei">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="vhK-Ls-Eei" firstAttribute="centerY" secondItem="l20-V5-ug8" secondAttribute="centerY" id="ATD-UH-lxb"/>
+                                    <constraint firstItem="vhK-Ls-Eei" firstAttribute="centerX" secondItem="l20-V5-ug8" secondAttribute="centerX" id="EYQ-Jw-fdt"/>
+                                    <constraint firstItem="vhK-Ls-Eei" firstAttribute="height" secondItem="l20-V5-ug8" secondAttribute="height" id="FUB-XW-9dV"/>
+                                    <constraint firstItem="vhK-Ls-Eei" firstAttribute="width" secondItem="l20-V5-ug8" secondAttribute="width" id="Fnw-ON-qdW"/>
+                                    <constraint firstAttribute="trailing" secondItem="vhK-Ls-Eei" secondAttribute="trailing" id="h7i-Z6-1rt"/>
+                                    <constraint firstItem="vhK-Ls-Eei" firstAttribute="top" secondItem="l20-V5-ug8" secondAttribute="top" id="lOR-sa-0s0"/>
+                                    <constraint firstItem="vhK-Ls-Eei" firstAttribute="leading" secondItem="l20-V5-ug8" secondAttribute="leading" id="sSI-Db-Q25"/>
+                                    <constraint firstAttribute="bottom" secondItem="vhK-Ls-Eei" secondAttribute="bottom" id="xDJ-1M-Frg"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="l20-V5-ug8" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ZCb-aY-a8h"/>
+                            <constraint firstItem="l20-V5-ug8" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="gbi-Lk-nrT"/>
+                            <constraint firstItem="l20-V5-ug8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="lXC-Se-9kr"/>
+                            <constraint firstItem="l20-V5-ug8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="vvL-uL-kJS"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="333.33333333333337" y="20.758928571428569"/>
+        </scene>
+        <!--Summary Table View Controller-->
+        <scene sceneID="CG3-i2-tOW">
+            <objects>
+                <tableViewController id="ogv-ej-wed" customClass="SummaryTableViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="N1f-Di-2fV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="uh0-0N-17v">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="uh0-0N-17v" id="mD2-Kt-tUF">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ogv-ej-wed" id="wOz-EF-vjH"/>
+                            <outlet property="delegate" destination="ogv-ej-wed" id="hNe-Yh-9pW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DJw-g0-81h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1400" y="21"/>
         </scene>
     </scenes>
 </document>
