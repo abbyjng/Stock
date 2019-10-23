@@ -58,7 +58,7 @@ class OverviewTableViewController: UITableViewController {
             let index = tableView.indexPathForSelectedRow?.row
         {
             summaryTableViewController.items = sections[index].items
-            //summaryTableViewController.source = "overview"
+            summaryTableViewController.sectionTitle = sections[index].name
         }
     }
     

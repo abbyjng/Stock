@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Overview Table View Controller-->
+        <!--All Stocks-->
         <scene sceneID="dOJ-sx-Oaj">
             <objects>
                 <tableViewController id="waz-Eb-nba" customClass="OverviewTableViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
@@ -52,13 +52,13 @@
                             <outlet property="delegate" destination="waz-Eb-nba" id="DVF-xH-KEx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="9VF-ly-r6V"/>
+                    <navigationItem key="navigationItem" title="All Stocks" largeTitleDisplayMode="always" id="9VF-ly-r6V"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQj-4r-FDE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1303" y="21"/>
         </scene>
-        <!--Summary Table View Controller-->
+        <!--title-->
         <scene sceneID="CG3-i2-tOW">
             <objects>
                 <tableViewController id="ogv-ej-wed" customClass="SummaryTableViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,6 +90,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="sxa-LU-XBN" kind="show" id="0TI-na-M2L"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -97,6 +100,10 @@
                             <outlet property="delegate" destination="ogv-ej-wed" id="hNe-Yh-9pW"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" title="title" largeTitleDisplayMode="always" id="ILl-0h-iER"/>
+                    <connections>
+                        <outlet property="SectionTitle" destination="ILl-0h-iER" id="AR6-Gh-szq"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DJw-g0-81h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

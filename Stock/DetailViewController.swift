@@ -10,9 +10,13 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    var item: Item = Item()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //item = Item()
+        
         // Do any additional setup after loading the view.
     }
     

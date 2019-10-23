@@ -12,8 +12,13 @@ class SummaryTableViewController: UITableViewController {
     
     var items: [Item] = [Item(name: "Test", count: 123)]
 
+    @IBOutlet var SectionTitle: UINavigationItem!
+    var sectionTitle: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        SectionTitle.title = sectionTitle
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -45,6 +50,15 @@ class SummaryTableViewController: UITableViewController {
         cell.detailTextLabel?.text = "\(item.count)"
 
         return cell
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let detailViewController = segue.destination as? DetailViewController,
+            let index = tableView.indexPathForSelectedRow?.row
+        {
+            detailViewController.item = items[index]
+        }
     }
     
 
