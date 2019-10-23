@@ -10,19 +10,23 @@ import Foundation
 
 class Section: Equatable {
     var name: String
-    var items: [String: Int]
+    var items: [Item]
     var description: String
     
     init(name: String, description: String) {
         self.name = name
-        self.items = [:]
+        self.items = []
         self.description = description
     }
     
     init() {
         self.name = "Unititled section"
-        self.items = [:]
+        self.items = []
         self.description = ""
+    }
+    
+    func addItem(item: Item) {
+        self.items.append(item)
     }
     
     
