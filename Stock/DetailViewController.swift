@@ -1,14 +1,14 @@
 //
-//  OverviewViewController.swift
+//  DetailViewController.swift
 //  Stock
 //
-//  Created by Abigail Ng on 10/17/19.
+//  Created by Abigail Ng on 10/23/19.
 //  Copyright © 2019 Abigail Ng. All rights reserved.
 //
 
 import UIKit
 
-class OverviewViewController: UIViewController {
+class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
