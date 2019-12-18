@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import Firebase
 
 class SummaryTableViewController: UITableViewController {
     
-    var items: [Item] = [Item(name: "Test", count: 123)]
+    var items: [Item] = []
 
     @IBOutlet var SectionTitle: UINavigationItem!
     var sectionTitle: String = ""
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,6 +29,7 @@ class SummaryTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+    
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -58,9 +60,19 @@ class SummaryTableViewController: UITableViewController {
             let index = tableView.indexPathForSelectedRow?.row
         {
             detailViewController.item = items[index]
+            
         }
     }
     
+    @IBAction func unwindFromDetail(_ sender: UIStoryboardSegue) {
+        if sender.source is DetailViewController {
+            if let senderVC = sender.source as? DetailViewController,
+                let index = tableView.indexPathForSelectedRow?.row {
+                items[index] = senderVC.item
+            }
+            tableView.reloadData()
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
@@ -70,18 +82,23 @@ class SummaryTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            items.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
-
+ 
+    @IBAction func addButtonPressed(_ sender: Any) {
+        items.append(Item(name: "new item!", count: 1, description: "the details"))
+        tableView.reloadData()
+    }
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
@@ -106,5 +123,11 @@ class SummaryTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func add(_ unwindSegue: UIStoryboardSegue) {
+        if let detailViewController = unwindSegue.source as? DetailViewController {
+            items.append(detailViewController.item)
+        }
+    }
 
 }

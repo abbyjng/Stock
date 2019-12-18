@@ -10,17 +10,61 @@ import UIKit
 
 class DetailViewController: UIViewController {
 
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var countEditLabel: UILabel!
+    
+    @IBOutlet weak var labelView: UIStackView!
+    @IBOutlet weak var editView: UIStackView!
+    
+    @IBOutlet weak var editButton: UIBarButtonItem!
+    
+    @IBAction func addButton(_ sender: Any) {
+        item.count += 1
+        countLabel.text = "\(item.count)"
+    }
+    
+    @IBAction func subtractButton(_ sender: Any) {
+        item.count -= 1
+        countLabel.text = "\(item.count)"
+    }
+    
     var item: Item = Item()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        //item = Item()
+        nameLabel.text = item.name
+        descriptionLabel.text = item.description
+        countLabel.text = "\(item.count)"
         
         // Do any additional setup after loading the view.
+        labelView.isHidden = false
+        editView.isHidden = true
     }
     
-
+    @IBAction func editButtonPressed(_ sender: Any) {
+        if labelView.isHidden {
+            nameLabel.text = nameTextField.text
+            descriptionLabel.text = descriptionTextView.text
+            item.name = nameLabel.text!
+            item.description = descriptionLabel.text!
+            item.count = Int(countLabel.text!)!
+            editButton.title = "Edit"
+        } else {
+            nameTextField.text = nameLabel.text
+            descriptionTextView.text = descriptionLabel.text
+            countEditLabel.text = countLabel.text
+            editButton.title = "Done"
+        }
+        labelView.isHidden = !labelView.isHidden
+        editView.isHidden = !editView.isHidden
+    }
+    
     /*
     // MARK: - Navigation
 

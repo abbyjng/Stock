@@ -15,7 +15,7 @@ class OverviewTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        sections[0].addItem(item: Item(name: "test", count: 123))
+        sections[0].addItem(item: Item(name: "test", count: 123, description: "this is a testing item. it has a long description so that we can see how it look when it extends very long! i am now writing more description than any item would normally have. cool."))
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -62,6 +62,15 @@ class OverviewTableViewController: UITableViewController {
         }
     }
     
+    @IBAction func unwindFromSummary(_ sender: UIStoryboardSegue) {
+        if sender.source is SummaryTableViewController {
+            if let senderVC = sender.source as? SummaryTableViewController,
+                let index = tableView.indexPathForSelectedRow?.row {
+                sections[index].items = senderVC.items
+            }
+            tableView.reloadData()
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.
