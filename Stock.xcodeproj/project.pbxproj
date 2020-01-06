@@ -13,6 +13,7 @@
 		BF2094B32360A12C00A13AE9 /* Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2094B22360A12C00A13AE9 /* Section.swift */; };
 		BF2094B52360A2C000A13AE9 /* OverviewTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2094B42360A2C000A13AE9 /* OverviewTableViewController.swift */; };
 		BF2094B72360A54D00A13AE9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2094B62360A54D00A13AE9 /* DetailViewController.swift */; };
+		BF44470E23AD384400D36ECF /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF44470D23AD384400D36ECF /* AddViewController.swift */; };
 		BF6F9E17235818560035E0F5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF6F9E16235818560035E0F5 /* AppDelegate.swift */; };
 		BF6F9E1C235818560035E0F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF6F9E1A235818560035E0F5 /* Main.storyboard */; };
 		BF6F9E1E235818580035E0F5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BF6F9E1D235818580035E0F5 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 		BF2094B22360A12C00A13AE9 /* Section.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Section.swift; sourceTree = "<group>"; };
 		BF2094B42360A2C000A13AE9 /* OverviewTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewTableViewController.swift; sourceTree = "<group>"; };
 		BF2094B62360A54D00A13AE9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		BF44470D23AD384400D36ECF /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		BF6F9E13235818560035E0F5 /* Stock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Stock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF6F9E16235818560035E0F5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF6F9E1B235818560035E0F5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				BF6F9E16235818560035E0F5 /* AppDelegate.swift */,
 				BF2094B42360A2C000A13AE9 /* OverviewTableViewController.swift */,
 				BF6F9E47235827D30035E0F5 /* SummaryTableViewController.swift */,
+				BF44470D23AD384400D36ECF /* AddViewController.swift */,
 				BF2094B62360A54D00A13AE9 /* DetailViewController.swift */,
 				BF6F9E1A235818560035E0F5 /* Main.storyboard */,
 				BF2094B023609E4700A13AE9 /* Item.swift */,
@@ -411,6 +414,7 @@
 			files = (
 				BF2094B52360A2C000A13AE9 /* OverviewTableViewController.swift in Sources */,
 				BF2094B32360A12C00A13AE9 /* Section.swift in Sources */,
+				BF44470E23AD384400D36ECF /* AddViewController.swift in Sources */,
 				BF6F9E48235827D30035E0F5 /* SummaryTableViewController.swift in Sources */,
 				BF2094B72360A54D00A13AE9 /* DetailViewController.swift in Sources */,
 				BF2094B123609E4800A13AE9 /* Item.swift in Sources */,
