@@ -224,6 +224,9 @@
                     <navigationItem key="navigationItem" title="New Item" id="ixe-0i-Uo9">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="5mi-By-pZh">
                             <color key="tintColor" red="1" green="0.0" blue="0.03624573524" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <segue destination="rzX-Aa-eaw" kind="unwind" unwindAction="unwindFromCancel:" id="T84-Ln-mgQ"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Done" id="xYC-w7-Cns">
                             <connections>
