@@ -73,6 +73,16 @@ class SummaryTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    
+    @IBAction func unwindFromAdd(_ sender: UIStoryboardSegue) {
+        if sender.source is AddViewController {
+            if let senderVC = sender.source as? AddViewController {
+                senderVC.createItem()
+                items.append(senderVC.item)
+            }
+            tableView.reloadData()
+        }
+    }
 
     /*
     // Override to support conditional editing of the table view.

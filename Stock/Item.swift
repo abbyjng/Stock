@@ -25,7 +25,7 @@ class Item: Equatable {
     
     init() {
         self.name = "Untitled item"
-        self.count = 0
+        self.count = 1
         self.description = ""
     }
 }

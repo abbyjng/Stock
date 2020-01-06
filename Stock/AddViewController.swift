@@ -10,10 +10,43 @@ import UIKit
 
 class AddViewController: UIViewController {
 
+    var item:Item = Item()
+    
+    var count:Int = 1
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var subtractButton: UIButton!
+    
+    @IBAction func subtractButtonPressed(_ sender: Any) {
+        count -= 1
+        countLabel.text = "\(count)"
+        if count == 1 {
+            subtractButton.isEnabled = false
+        }
+    }
+    @IBAction func addButtonPressed(_ sender: Any) {
+        count += 1
+        countLabel.text = "\(count)"
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        countLabel.text = "1"
 
         // Do any additional setup after loading the view.
+    }
+    
+    func createItem() {
+        if (nameTextField.text! != "") {
+            item.name = nameTextField.text!
+        }
+        item.count = count
+        item.description =  descriptionTextView.text!
+    
     }
     
 

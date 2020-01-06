@@ -60,7 +60,7 @@
             </objects>
             <point key="canvasLocation" x="2213.04347826087" y="20.758928571428569"/>
         </scene>
-        <!--title-->
+        <!--Section Name-->
         <scene sceneID="CG3-i2-tOW">
             <objects>
                 <tableViewController id="ogv-ej-wed" customClass="SummaryTableViewController" customModule="Stock" customModuleProvider="target" sceneMemberID="viewController">
@@ -102,7 +102,7 @@
                             <outlet property="delegate" destination="ogv-ej-wed" id="hNe-Yh-9pW"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="title" largeTitleDisplayMode="always" id="ILl-0h-iER">
+                    <navigationItem key="navigationItem" title="Section Name" largeTitleDisplayMode="always" id="ILl-0h-iER">
                         <barButtonItem key="leftBarButtonItem" title="All Stocks" id="Oca-dd-fXw">
                             <connections>
                                 <segue destination="uo9-6h-8S7" kind="unwind" unwindAction="unwindFromSummary:" id="PsM-P6-3NW"/>
@@ -165,6 +165,7 @@
                                                                 <state key="normal" title="-"/>
                                                                 <connections>
                                                                     <action selector="subtractButton:" destination="sxa-LU-XBN" eventType="touchUpInside" id="iBr-LJ-3CZ"/>
+                                                                    <action selector="subtractButtonPressed:" destination="yqy-qJ-07J" eventType="touchUpInside" id="t2r-xF-vQu"/>
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Egf-7b-DRZ">
@@ -182,6 +183,7 @@
                                                                 <state key="normal" title="+"/>
                                                                 <connections>
                                                                     <action selector="addButton:" destination="sxa-LU-XBN" eventType="touchUpInside" id="HEi-nR-lp6"/>
+                                                                    <action selector="addButtonPressed:" destination="yqy-qJ-07J" eventType="touchUpInside" id="Ptd-cf-OhO"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -209,7 +211,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.80551151607646065" green="0.96533010835079403" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Wtm-sq-Ur2" firstAttribute="height" secondItem="73W-fu-d8R" secondAttribute="height" multiplier="0.5" id="1BZ-nH-LRh"/>
                             <constraint firstItem="r5R-Wn-EXm" firstAttribute="top" secondItem="73W-fu-d8R" secondAttribute="top" id="VBl-RW-qKT"/>
@@ -223,10 +225,21 @@
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="5mi-By-pZh">
                             <color key="tintColor" red="1" green="0.0" blue="0.03624573524" alpha="0.84705882349999995" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="xYC-w7-Cns"/>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="xYC-w7-Cns">
+                            <connections>
+                                <segue destination="rzX-Aa-eaw" kind="unwind" unwindAction="unwindFromAdd:" id="6cC-P9-lBI"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="countLabel" destination="Egf-7b-DRZ" id="rTH-d2-S5c"/>
+                        <outlet property="descriptionTextView" destination="iZJ-Vf-zPl" id="YuB-cn-lcE"/>
+                        <outlet property="nameTextField" destination="o7J-Zn-Wox" id="T9P-bQ-BDe"/>
+                        <outlet property="subtractButton" destination="KY0-1x-5Wt" id="PEc-21-GL1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XlN-tb-W3z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rzX-Aa-eaw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="4150.7246376811599" y="798.88392857142856"/>
         </scene>
@@ -380,7 +393,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.80636634758508408" green="0.96350027444149" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Vks-a3-fWW" firstAttribute="trailing" secondItem="LgS-ap-DhL" secondAttribute="trailing" id="1zp-Si-gY2"/>
                             <constraint firstItem="Vks-a3-fWW" firstAttribute="top" secondItem="LgS-ap-DhL" secondAttribute="top" id="6ox-QB-12E"/>
@@ -462,6 +475,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="PTi-wL-ofI" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kb3-fq-f1Z">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
